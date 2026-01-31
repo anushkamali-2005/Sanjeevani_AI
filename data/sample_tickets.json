@@ -1,0 +1,46 @@
+[
+    {
+        "id": "TKT-001",
+        "merchant_id": "MERCH-001",
+        "subject": "Checkout page not loading after migration",
+        "description": "After migrating to headless, our checkout page returns 500 error",
+        "category": "checkout_broken",
+        "priority": "critical",
+        "status": "open",
+        "created_at": "2026-02-01T10:00:00Z",
+        "updated_at": "2026-02-01T10:00:00Z",
+        "metadata": {
+            "migration_stage": "frontend_migration"
+        },
+        "error_logs": [
+            "500 Internal Server Error at /checkout"
+        ],
+        "tags": [
+            "migration",
+            "critical",
+            "checkout"
+        ]
+    },
+    {
+        "id": "TKT-002",
+        "merchant_id": "MERCH-002",
+        "subject": "Webhook not receiving order updates",
+        "description": "Order webhooks stopped working after API migration",
+        "category": "webhook_failure",
+        "priority": "high",
+        "status": "open",
+        "created_at": "2026-02-01T09:30:00Z",
+        "updated_at": "2026-02-01T09:30:00Z",
+        "metadata": {
+            "migration_stage": "backend_migration"
+        },
+        "error_logs": [
+            "Webhook timeout after 30s"
+        ],
+        "tags": [
+            "webhook",
+            "api",
+            "migration"
+        ]
+    }
+]

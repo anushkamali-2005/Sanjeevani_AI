@@ -1,0 +1,38 @@
+[
+    {
+        "id": "MERCH-001",
+        "name": "TechGear Store",
+        "tier": "enterprise",
+        "migration_stage": "frontend_migration",
+        "migration_started_at": "2026-01-15T00:00:00Z",
+        "api_key": "sk_test_12345",
+        "webhook_endpoints": [
+            "https://techgear.com/webhooks/orders"
+        ],
+        "error_count_24h": 45,
+        "checkout_success_rate": 0.65,
+        "last_active": "2026-02-01T12:00:00Z",
+        "configuration": {
+            "headless_enabled": true
+        },
+        "health_score": 45.0
+    },
+    {
+        "id": "MERCH-002",
+        "name": "Fashion Hub",
+        "tier": "professional",
+        "migration_stage": "backend_migration",
+        "migration_started_at": "2026-01-20T00:00:00Z",
+        "api_key": "sk_test_67890",
+        "webhook_endpoints": [
+            "https://fashionhub.com/api/webhook"
+        ],
+        "error_count_24h": 12,
+        "checkout_success_rate": 0.88,
+        "last_active": "2026-02-01T11:45:00Z",
+        "configuration": {
+            "headless_enabled": true
+        },
+        "health_score": 72.0
+    }
+]
