@@ -11,10 +11,9 @@ class LLMService:
     def __init__(self):
         self.settings = get_settings()
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-pro",
+            model="gemini-2.5-flash-lite",
             google_api_key=self.settings.google_api_key,
-            temperature=0.3,
-            convert_system_message_to_human=True
+            temperature=0.3
         )
     
     def analyze_ticket_pattern(self, tickets: List[Dict]) -> Dict:

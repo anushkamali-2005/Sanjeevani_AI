@@ -1,8 +1,16 @@
 """
 All Splunk-related functionality in ONE file using OOP
+Mock implementation that works without Splunk installed
 """
-import splunklib.client as client
-import splunklib.results as results
+try:
+    import splunklib.client as client
+    import splunklib.results as results
+    SPLUNK_AVAILABLE = True
+except ImportError:
+    client = None
+    results = None
+    SPLUNK_AVAILABLE = False
+
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 from backend.config import get_settings
@@ -17,6 +25,11 @@ class SplunkAnalyzer:
     
     def _connect(self):
         """Establish connection to Splunk"""
+        if not SPLUNK_AVAILABLE:
+            print("Splunk library not installed - using mock data")
+            self.service = None
+            return
+        
         try:
             self.service = client.connect(
                 host=self.settings.splunk_host,
