@@ -2,7 +2,7 @@
 
 ## Self-Healing Autonomous Support Agent for E-commerce Migration
 
-SupportPilot is an **autonomous multi-agent system** built with **LangGraph** and **Google Gemini AI** that automatically detects, analyzes, and resolves support issues during e-commerce platform migrations. Unlike simple LLM-based chatbots, SupportPilot employs a **graph-based agentic workflow** where multiple specialized agents collaborate autonomously to handle complex support scenarios.
+SupportPilot is an **autonomous multi-agent system** built with **LangGraph**  that automatically detects, analyzes, and resolves support issues during e-commerce platform migrations. Unlike simple LLM-based chatbots, SupportPilot employs a **graph-based agentic workflow** where multiple specialized agents collaborate autonomously to handle complex support scenarios.
 
 ---
 
