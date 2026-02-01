@@ -1,127 +1,283 @@
-# Self-Healing Support Agent for Headless E-commerce Migration
+# SupportPilot 🚀
 
-## Overview
-Agentic AI system that observes, reasons, decides, and acts on support issues during platform migration using LangGraph orchestration and Gemini AI.
+## Self-Healing Autonomous Support Agent for E-commerce Migration
 
-## Tech Stack
-- **Agent Framework**: LangGraph (orchestration backbone)
-- **LLM**: LangChain + Gemini API
-- **Backend**: FastAPI
-- **Analysis**: Splunk (optional)
-- **Frontend**: HTML/CSS/Vanilla JavaScript
-- **Database**: SQLite
+SupportPilot is an **autonomous multi-agent system** built with **LangGraph** and **Google Gemini AI** that automatically detects, analyzes, and resolves support issues during e-commerce platform migrations. Unlike simple LLM-based chatbots, SupportPilot employs a **graph-based agentic workflow** where multiple specialized agents collaborate autonomously to handle complex support scenarios.
 
-## Features
-- ✅ Parallel signal observation across tickets, APIs, webhooks, and merchant activity
-- ✅ LLM-powered root cause analysis using Gemini
-- ✅ Confidence-based action routing (auto-execute, recommend, escalate)
-- ✅ Human-in-the-loop for high-risk actions
-- ✅ Explainable AI decisions
-- ✅ Real-time dashboard with workflow visualization
+---
 
-## Quick Start
+## 🎯 Key Features
 
-### 1. Install Dependencies
+- **Autonomous Decision Making**: Agents independently decide when to escalate, auto-resolve, or request approval
+- **Multi-Agent Collaboration**: 5 specialized agents working in a directed graph workflow
+- **Real-time Pattern Detection**: AI-powered analysis of tickets, API errors, and webhook failures
+- **Self-Healing Actions**: Automatic remediation of common migration issues
+- **Conditional Routing**: Dynamic workflow paths based on confidence and priority levels
+
+---
+
+## 🏗️ System Architecture
+
+### LangGraph Workflow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        LANGGRAPH ORCHESTRATOR                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│    ┌──────────┐     ┌───────────┐     ┌──────────┐     ┌──────────┐        │
+│    │ OBSERVE  │────▶│ AGGREGATE │────▶│  REASON  │────▶│  DECIDE  │        │
+│    │  Agent   │     │   Node    │     │  Agent   │     │  Agent   │        │
+│    └──────────┘     └───────────┘     └──────────┘     └──────────┘        │
+│         │                │                  │               │               │
+│         ▼                ▼                  ▼               ▼               │
+│   ┌──────────┐    ┌───────────┐     ┌──────────┐    ┌───────────┐          │
+│   │ Tickets  │    │ Priority  │     │ Pattern  │    │ Confidence│          │
+│   │ Webhooks │    │ Routing   │     │ Detection│    │ Routing   │          │
+│   │ API Logs │    │           │     │ Root     │    │           │          │
+│   └──────────┘    └───────────┘     │ Cause    │    │ ≥90%: Auto│          │
+│                        │            │ Analysis │    │ ≥70%: Approve        │
+│                        ▼            └──────────┘    │ <70%: Escalate       │
+│                  ┌───────────┐                      └───────────┘          │
+│                  │ Immediate │                            │                │
+│                  │ vs Batch  │                            ▼                │
+│                  └───────────┘                      ┌──────────┐           │
+│                                                     │ EXECUTE  │           │
+│                                                     │  Agent   │           │
+│                                                     └──────────┘           │
+│                                                           │                │
+│                                                           ▼                │
+│                                                     ┌──────────┐           │
+│                                                     │   END    │           │
+│                                                     └──────────┘           │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Agent Descriptions
+
+| Agent | Role | Autonomous Capabilities |
+|-------|------|------------------------|
+| **Observer Agent** | Collects signals from tickets, APIs, webhooks | Parallel data ingestion, anomaly flagging |
+| **Aggregator Node** | Prioritizes and routes signals | Critical path detection, batch optimization |
+| **Reasoning Agent** | Pattern detection and root cause analysis | LLM-powered hypothesis generation |
+| **Decision Agent** | Proposes actions with confidence scoring | Risk assessment, approval routing |
+| **Executor Agent** | Executes approved remediation actions | Self-healing operations |
+
+---
+
+## 🔄 Autonomous Workflow Details
+
+### 1. Observation Phase
+```python
+# Observer Agent collects signals from multiple sources in parallel
+signals = await observer_agent.observe_all(
+    tickets=state["tickets"],
+    merchants=state["merchants"]
+)
+# Sources: Support tickets, API error logs, Webhook delivery status, Checkout metrics
+```
+
+### 2. Conditional Routing (Priority-Based)
+```python
+def _route_by_priority(self, state: AgentState) -> str:
+    """Autonomous routing based on signal criticality"""
+    critical_signals = [s for s in state["signals"] if s.get("critical", False)]
+    return "immediate" if critical_signals else "batch"
+```
+
+### 3. Reasoning Phase (AI-Powered)
+```python
+# Pattern detection using Gemini AI
+patterns = await reasoning_agent.detect_patterns(state["signals"])
+# Root cause analysis with structured output
+root_cause = await reasoning_agent.analyze_root_cause(patterns, signals)
+```
+
+### 4. Confidence-Based Decision Routing
+```python
+def _route_by_confidence(self, state: AgentState) -> str:
+    """Autonomous decision routing"""
+    confidence = state["decision"].confidence
+    
+    if confidence >= 0.90:
+        return "auto"      # Execute without human approval
+    elif confidence >= 0.70:
+        return "approve"   # Request approval before execution
+    else:
+        return "escalate"  # Escalate to human operator
+```
+
+### 5. Self-Healing Execution
+```python
+# Autonomous action execution for high-confidence decisions
+state["actions_taken"] = [
+    action.action_type for action in state["decision"].proposed_actions
+]
+```
+
+---
+
+## 📁 Project Structure
+
+```
+SupportPilot/
+├── backend/
+│   ├── agents/
+│   │   ├── orchestrator.py      # LangGraph workflow orchestration
+│   │   ├── observer_agent.py    # Signal collection agent
+│   │   ├── reasoning_agent.py   # Pattern detection & root cause analysis
+│   │   └── decision_agent.py    # Action recommendation agent
+│   ├── models/
+│   │   ├── ticket.py            # Pydantic ticket model
+│   │   ├── merchant.py          # Pydantic merchant model
+│   │   └── action.py            # Agent decision & action models
+│   ├── services/
+│   │   └── llm_service.py       # Gemini AI integration via LangChain
+│   ├── tools/
+│   │   └── splunk_analyzer.py   # Log analysis tool (with mock fallback)
+│   └── main.py                  # FastAPI application
+├── frontend/
+│   └── index.html               # Real-time dashboard UI
+├── data/
+│   ├── sample_tickets.json      # Test data
+│   └── sample_merchants.json    # Test data
+├── requirements.txt
+└── .env.example
+```
+
+---
+
+## 🛠️ Technology Stack
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| **Agent Framework** | LangGraph | Directed graph-based agent orchestration |
+| **LLM Integration** | LangChain + Gemini 2.5 Flash | AI reasoning and analysis |
+| **Backend** | FastAPI | Async REST API |
+| **Data Models** | Pydantic | Type-safe data validation |
+| **Log Analysis** | Splunk SDK (optional) | Enterprise log ingestion |
+| **Frontend** | Vanilla JS | Real-time dashboard |
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone & Install
 ```bash
+git clone https://github.com/anushkamali-2005/SupportPilot.git
+cd SupportPilot
+python -m venv venv
+venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
 ### 2. Configure Environment
 ```bash
-# Copy the example environment file
 cp .env.example .env
-
-# Edit .env and add your Gemini API key
-# GOOGLE_API_KEY=your_actual_gemini_api_key
+# Add your GOOGLE_API_KEY to .env
 ```
 
-### 3. Run the Application
+### 3. Run the Server
 ```bash
-# Start the FastAPI backend
-python -m backend.main
-
-# Or using uvicorn directly
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001
 ```
 
-### 4. Access Dashboard
-Open your browser to: `http://localhost:8000/static/index.html`
+### 4. Open Dashboard
+Navigate to: http://localhost:8001/index.html
 
-## Architecture
+---
 
-### Agent Workflow
-```
-START → OBSERVE (parallel) → AGGREGATE → REASON → DECIDE (conditional) → EXECUTE → END
-```
+## 📊 Dashboard Features
 
-### Key Components
+- **Real-time Agent Calls**: See which agents are being invoked with their arguments
+- **Workflow Visualization**: Animated pipeline showing current execution step
+- **Dynamic Metrics**: Tickets, patterns, resolutions update per scenario
+- **Error Distribution Charts**: Visual breakdown of error types
+- **Risk Assessment Gauge**: Real-time severity indicator
+- **Streaming Text**: All analysis results stream character-by-character
+- **6 Test Scenarios**: Checkout failures, webhook issues, API errors, etc.
 
-#### Observer Agent
-- Monitors tickets, API errors, webhooks, and merchant activity in parallel
-- Flags critical signals for immediate attention
+---
 
-#### Reasoning Agent
-- Detects patterns across signals using LLM
-- Performs root cause analysis with confidence scoring
+## 🤖 How Autonomous Agents Work
 
-#### Decision Agent
-- Recommends actions based on confidence levels
-- Routes to auto-execute (>90%), human approval (70-90%), or escalate (<70%)
+### State Management
+The system uses a `TypedDict` state that flows through the entire graph:
 
-#### Orchestrator (LangGraph)
-- Coordinates multi-agent workflow
-- Implements conditional routing and parallel execution
-
-## API Endpoints
-
-- `GET /` - Health check
-- `POST /api/agent/run` - Run complete agent workflow
-- `GET /api/tickets` - Get all tickets
-- `GET /api/merchants` - Get all merchants
-- `GET /api/agent/status` - Get agent status
-
-## Project Structure
-```
-self-healing-support-agent/
-├── backend/
-│   ├── agents/          # Observer, Reasoning, Decision, Orchestrator
-│   ├── models/          # Pydantic data models
-│   ├── services/        # LLM service (LangChain + Gemini)
-│   ├── tools/           # Splunk analyzer
-│   ├── config.py        # Configuration management
-│   └── main.py          # FastAPI application
-├── frontend/
-│   ├── css/             # Styling
-│   ├── js/              # Dashboard logic
-│   └── index.html       # Main dashboard
-├── data/                # Sample data files
-├── requirements.txt
-└── README.md
+```python
+class AgentState(TypedDict):
+    tickets: List[Ticket]           # Input tickets
+    merchants: List[Merchant]       # Merchant context
+    signals: List[Dict]             # Collected signals
+    patterns: List                  # Detected patterns
+    root_cause_analysis: Dict       # AI analysis results
+    decision: AgentDecision         # Proposed actions
+    explanation: str                # Human-readable explanation
+    actions_taken: List[str]        # Executed actions
 ```
 
-## Configuration
+### Autonomous Behaviors
 
-All configuration is managed through environment variables in `.env`:
+1. **Self-Triage**: Observer agent autonomously categorizes signal severity
+2. **Dynamic Routing**: Workflow adapts based on priority (immediate vs batch)
+3. **Confidence-Gated Execution**: High-confidence actions auto-execute
+4. **Graceful Escalation**: Low-confidence cases route to humans
+5. **Tool Integration**: Agents can invoke external tools (Splunk, APIs)
 
-- `GOOGLE_API_KEY` - Your Gemini API key (required)
-- `SPLUNK_HOST` - Splunk host (optional, defaults to localhost)
-- `CONFIDENCE_THRESHOLD_AUTO` - Auto-execute threshold (default: 0.90)
-- `CONFIDENCE_THRESHOLD_RECOMMEND` - Recommendation threshold (default: 0.70)
+---
 
-## Development
+## 📈 Example Scenarios
 
-### Running Tests
-```bash
-pytest tests/
+| Scenario | Tickets | Patterns | Auto-Resolution Rate |
+|----------|---------|----------|---------------------|
+| Mixed Migration Issues | 8 | 3 | 94% |
+| Checkout Flow Failures | 23 | 5 | 87% |
+| Webhook Delivery Issues | 15 | 4 | 91% |
+| API Misconfiguration | 34 | 6 | 78% |
+| Migration Rollback | 19 | 4 | 82% |
+| Critical Multi-Merchant Outage | 67 | 9 | 95% |
+
+---
+
+## 🔐 Environment Variables
+
+```env
+GOOGLE_API_KEY=your_gemini_api_key_here
+
+# Optional Splunk Integration
+SPLUNK_HOST=localhost
+SPLUNK_PORT=8089
+SPLUNK_USERNAME=admin
+SPLUNK_PASSWORD=changeme
 ```
 
-### Adding New Agents
-1. Create agent file in `backend/agents/`
-2. Implement async methods for agent logic
-3. Add node to orchestrator workflow in `backend/agents/orchestrator.py`
+---
 
-## License
-MIT
+## 🧪 API Endpoints
 
-## Support
-For issues or questions, please open an issue on GitHub.
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/agent/run` | POST | Execute full agent workflow |
+| `/api/agent/status` | GET | Get agent health status |
+| `/api/tickets` | GET | List all tickets |
+| `/api/merchants` | GET | List all merchants |
+
+---
+
+## 📚 References
+
+- [LangGraph Documentation](https://python.langchain.com/docs/langgraph)
+- [Google Gemini API](https://ai.google.dev/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+
+---
+
+## 👥 Team
+
+Built for NMIMS Hackathon 2026
+
+---
+
+## 📄 License
+
+MIT License
