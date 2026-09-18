@@ -3,7 +3,7 @@
 > **An auditable, evidence-backed environmental decision-support system coupling a hybrid RAG pipeline (dense semantic vector search + BM25 sparse keyword retrieval + cross-encoder reranking) with a deterministic causal relationship graph, multi-tier provenance citation, and active slot-filling conversational intelligence.**
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Production-success?logo=vercel)](https://sanjeevani-ai-ten.vercel.app)
-[![CI/CD Pipeline](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=githubactions)](.github/workflows/ci-cd.yml)
+[![CI/CD Pipeline](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=githubactions)](.github/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue?logo=python)](requirements.txt)
 [![Vector DB](https://img.shields.io/badge/ChromaDB-v0.4.24-orange?logo=chromadb)](chroma_db/)
 [![Embedding Model](https://img.shields.io/badge/Embeddings-all--MiniLM--L6--v2-yellow)](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
@@ -689,7 +689,7 @@ graph TD
   docker build -t sanjeevani-ai:latest .
   ```
 - **Inspecting Runs**: View real-time workflow status, step logs, and download packaged deployment artifacts under the **Actions** tab on GitHub:
-  `https://github.com/anushkamali-2005/SupportPilot/actions`
+  `https://github.com/anushkamali-2005/Sanjeevani_AI/actions`
 
 ---
 
@@ -699,7 +699,7 @@ graph TD
 Sanjeevani AI/
 ├── .github/
 │   └── workflows/
-│       └── ci-cd.yml              # Automated GitHub Actions test & deploy workflow
+│       └── ci.yml                 # Automated GitHub Actions CI pipeline (5 validation stages)
 ├── api/
 │   └── index.py                   # Vercel serverless ASGI handler
 ├── backend/
@@ -710,6 +710,9 @@ Sanjeevani AI/
 │       ├── conversation.py        # Active slot extraction & conversational flow logic
 │       ├── retrieval.py           # Hybrid RAG pipeline (Dense + BM25 + RRF + Cross-Encoder)
 │       ├── reasoning.py           # Causal relationship graph evaluation engine
+│       ├── csv_knowledge.py       # Empirical tabular dataset lookup engine
+│       ├── geo_lookup.py          # Geospatial coordinate to climate mapping
+│       ├── websearch.py           # Multi-tier live web search fallback layer
 │       └── llm_client.py          # Multi-model LLM interface with fallback hierarchy
 ├── chroma_db/                     # Local ChromaDB persistent vector database (502 chunks)
 ├── data/                          # Scientific PDFs (IPCC AR6 WGII) and empirical CSVs
@@ -723,8 +726,10 @@ Sanjeevani AI/
 │       └── evidence_chunks_real.json # 502 chunked and enriched literature segments
 ├── public/                        # Static distribution mirror for deployment
 ├── tests/
-│   ├── test_api.py                # API endpoint validation tests
-│   └── test_conversation.py       # Conversational slot filling & reasoning tests
+│   ├── test_api.py                # API endpoint validation & session persistence tests
+│   ├── test_conversation.py       # Conversational slot filling & reasoning tests
+│   ├── test_rag.py                # Deterministic RAG, citation provenance & graph tests
+│   └── test_frontend.py           # Frontend DOM structure, assets & JS syntax tests
 ├── ingest.py                      # PDF parsing, chunking, and ChromaDB indexing script
 ├── eval_retrieval.py              # 10-query retrieval benchmark suite
 ├── requirements.txt               # Pinned Python package dependencies
@@ -746,7 +751,7 @@ Sanjeevani AI/
 | **Dual Input Support** | Natural language advisory chat + direct 9-variable structured form | `frontend/index.html` |
 | **Geospatial Context** | Geographic latitude/longitude and regional state mapping to climate datasets | `backend/app/schemas.py` |
 | **Actionable Guidance** | Action, causal mechanism, quantitative impact, time horizon, and operational trade-offs | `frontend/app.js` |
-| **Production Engineering** | CI/CD pipeline, automated test suite, and live serverless Vercel deployment | `.github/workflows/ci-cd.yml` |
+| **Production Engineering** | CI/CD pipeline, automated test suite, and live serverless Vercel deployment | `.github/workflows/ci.yml` |
 
 ---
 
