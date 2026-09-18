@@ -608,62 +608,88 @@ Interactive OpenAPI documentation is available at `http://127.0.0.1:8000/docs`.
 
 ---
 
-## 14. CI/CD & Testing
+## 14. CI/CD Pipeline
 
-The repository features an automated CI/CD pipeline defined in [`.github/workflows/ci-cd.yml`](file:///.github/workflows/ci-cd.yml) that executes on every push and pull request to `main`:
+The project implements a conservative, deterministic, production-grade Continuous Integration and Continuous Deployment (CI/CD) pipeline engineered using **GitHub Actions** ([`.github/workflows/ci.yml`](file:///.github/workflows/ci.yml)).
 
-```yaml
-name: Sanjeevani AI CI/CD Pipeline
-
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
-jobs:
-  test-and-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install pytest flake8
-      - name: Code Quality Checks
-        run: flake8 backend api --count --select=E9,F63,F7,F82 --show-source --statistics
-      - name: Run Test Suite
-        run: pytest tests/ -v
-
-  deploy-production:
-    needs: test-and-lint
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+```mermaid
+graph TD
+    Dev([Developer]) --> Push[Git Push / Pull Request]
+    Push --> GHA[GitHub Actions Runner - ubuntu-latest]
+    
+    subgraph PipelineStages ["Continuous Integration Pipeline (.github/workflows/ci.yml)"]
+        S1["1. Foundation & Environment Setup<br/>(Python 3.12, Pip Caching, Flake8 E9/F63/F7/F82 Syntax Checks)"]
+        S2["2. Backend & Import Integrity<br/>(Module import verification, test_api.py, test_conversation.py)"]
+        S3["3. Deterministic RAG & Provenance Checks<br/>(SourceItem schemas, strict citation ordering, graph traversal tests)"]
+        S4["4. Frontend & Client Validation<br/>(Node 20 JS syntax checking, DOM structure & design token tests)"]
+        S5["5. Production Build & Packaging<br/>(Docker build validation, deployment artifact release packaging)"]
+    end
+    
+    GHA --> S1 --> S2 --> S3 --> S4 --> S5
+    S5 --> Artifact[Deployment-Ready Release Tarball<br/>sanjeevani-ai-release.tar.gz]
+    Artifact --> CD[Production Deployment Target<br/>Vercel / Cloud Container]
 ```
 
-### Running Tests Locally
+### Pipeline Architecture & Stages
 
-```bash
-# Execute unit and integration tests
-pytest tests/ -v
+1. **Stage 1: Foundation & Environment Validation (`foundation`)**
+   - Spins up an `ubuntu-latest` runner with Python 3.12.
+   - Restores cached pip dependencies for fast (~10s) builds.
+   - Installs base requirements from `requirements.txt`.
+   - Runs strict, deterministic code syntax and undefined-name checks via `flake8` (`--select=E9,F63,F7,F82`), avoiding speculative stylistic failures.
 
-# Run Python code quality check
-flake8 backend api --count --select=E9,F63,F7,F82 --show-source --statistics
+2. **Stage 2: Backend Import & Unit Validation (`backend-validation`)**
+   - Validates module initialization without starting long-running server daemons:
+     - `FastAPI` application instance instantiation.
+     - Conversational session manager and slot-filling module imports.
+     - Pydantic response and request schema validation.
+   - Executes core conversational and API endpoint tests ([`tests/test_api.py`](file:///tests/test_api.py), [`tests/test_conversation.py`](file:///tests/test_conversation.py)).
 
-# Verify full 10-query retrieval evaluation benchmark
-python eval_retrieval.py
-```
+3. **Stage 3: RAG, Provenance & Citation Verification (`rag-and-citations`)**
+   - Verifies the integrity of the knowledge retrieval and citation engine:
+     - **Deterministic Provenance Ordering**: Tests that internal documents (`DOC_01`) are sorted first, live web sources (`WEB_01`) second, empirical datasets (`DATA_01`) third, and AI fallback (`AI_01`) last.
+     - **Schema Serialization**: Tests metadata preservation across all source item types.
+     - **Causal Graph Reasoning**: Verifies that multi-variable queries against `knowledge/graph.json` satisfy $\ge 2$ precondition constraints and output quantitative multi-metric impacts.
+     - **Mocked Web Fallback**: Uses mocks for Tavily web searches to guarantee zero token consumption, zero external network dependency, and 100% deterministic test execution in CI.
+
+4. **Stage 4: Frontend Asset & Client Script Validation (`frontend-validation`)**
+   - Sets up Node.js 20 to validate client-side JavaScript syntax (`node -c frontend/app.js` and `node -c public/static/app.js`).
+   - Runs DOM structure and accessibility checks ([`tests/test_frontend.py`](file:///tests/test_frontend.py)), verifying that all required form inputs, chat containers, and custom design tokens exist in both `frontend/` and `public/` mirrors.
+
+5. **Stage 5: Production Build & Deployment Packaging (`production-build`)**
+   - Validates the production container build using Docker Buildx (`Dockerfile`).
+   - Packages a clean, deployment-ready release tarball (`sanjeevani-ai-release-<sha>.tar.gz`), excluding test caches and local secrets.
+   - Uploads the archive as a GitHub Actions workflow artifact via `actions/upload-artifact@v4`.
+
+---
+
+### CI/CD Reliability & Testing Philosophy
+
+- **Zero External API Dependencies**: CI runs do **NOT** require `GROQ_API_KEY`, `GEMINI_API_KEY`, or `TAVILY_API_KEY`. All LLM and search calls in test suites are either deterministically mocked or exercised through offline deterministic reasoning pathways.
+- **Zero Paid Token Consumption**: Test suites will never incur API charges or fail due to rate limits or third-party downtime.
+- **Strict Provenance Integrity**: Guarantees that every assertion has a verifiable trace before code can be merged into `main`.
+
+---
+
+### How to Trigger the Pipeline & Inspect Results
+
+- **Automated Trigger**: Pushing commits or opening pull requests targeting `main` or `master` triggers the pipeline automatically.
+- **Manual / Local Execution**:
+  ```bash
+  # 1. Run linting syntax check
+  flake8 backend api --count --select=E9,F63,F7,F82 --show-source --statistics
+
+  # 2. Run full 14-test suite locally
+  pytest tests/ -v
+
+  # 3. Validate JavaScript syntax
+  node -c frontend/app.js
+
+  # 4. Validate Docker production build
+  docker build -t sanjeevani-ai:latest .
+  ```
+- **Inspecting Runs**: View real-time workflow status, step logs, and download packaged deployment artifacts under the **Actions** tab on GitHub:
+  `https://github.com/anushkamali-2005/SupportPilot/actions`
 
 ---
 
