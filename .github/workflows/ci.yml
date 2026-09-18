@@ -86,3 +86,32 @@ jobs:
       - name: Execute Deterministic RAG & Citation Tests
         run: |
           pytest tests/test_rag.py -v
+
+  frontend-validation:
+    name: Frontend Asset & Client Script Validation
+    needs: rag-and-citations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js for Client Script Validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate JavaScript Syntax
+        run: |
+          node -c frontend/app.js
+          node -c public/static/app.js
+
+      - name: Set up Python for DOM Integrity Checks
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Frontend Asset & DOM Tests
+        run: |
+          pip install pytest
+          pytest tests/test_frontend.py -v
