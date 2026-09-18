@@ -30,3 +30,34 @@ jobs:
       - name: Basic Code Syntax & Import Validation
         run: |
           flake8 backend api --count --select=E9,F63,F7,F82 --show-source --statistics
+
+  backend-validation:
+    name: Backend Import & Unit Test Validation
+    needs: foundation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12 Runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest flake8
+
+      - name: Verify Backend Import Integrity
+        run: |
+          python -c "from backend.app.main import app; print('FastAPI app initialized successfully')"
+          python -c "from backend.app.conversation import process_message; print('Conversation module initialized successfully')"
+          python -c "from backend.app.schemas import ChatResponse, AnalyzeResponse; print('Pydantic schemas verified')"
+
+      - name: Run Core Backend Unit Tests
+        run: |
+          pytest tests/test_api.py tests/test_conversation.py -v
