@@ -1,0 +1,186 @@
+[
+  {
+    "id": "doc_001_chunk_1",
+    "text": "Soil organic carbon (SOC) is the largest terrestrial carbon pool, storing approximately 1,500 gigatonnes of carbon in the top metre of soil globally — more than twice the amount held in the atmosphere and three times that in vegetation. Small percentage changes in SOC stocks can therefore have significant impacts on atmospheric CO2 concentrations. The FAO's '4 per 1000' initiative proposes that an annual growth rate of 0.4% in SOC stocks in the first 30–40 cm of soil would significantly offset global anthropogenic CO2 emissions. Cover cropping, reduced tillage, and organic amendments are the primary management strategies shown to increase SOC sequestration rates.",
+    "source": "FAO (2017), Soil Organic Carbon: the hidden potential",
+    "url_or_citation": "FAO, 2017. ISBN 978-92-5-109681-9",
+    "topic_tags": ["soil", "carbon", "cover_crops", "tillage"],
+    "linked_metrics": ["soil_organic_carbon", "carbon_sequestration"]
+  },
+  {
+    "id": "doc_001_chunk_2",
+    "text": "Leguminous cover crops fix atmospheric nitrogen through symbiotic rhizobia bacteria, contributing 50–200 kg N per hectare per year depending on species and climate. This biological nitrogen fixation reduces dependence on synthetic fertilisers, whose manufacture is energy-intensive and whose application contributes to nitrous oxide emissions (a greenhouse gas with ~298 times the warming potential of CO2). Additionally, the continuous root biomass from cover crops feeds soil microbial communities, increasing microbial biomass carbon by 15–25% within 2–3 cropping cycles in temperate and semi-arid systems.",
+    "source": "FAO (2017), Soil Organic Carbon: the hidden potential; Poeplau & Don (2015), Carbon sequestration in agricultural soils via cultivation of cover crops, Agriculture Ecosystems & Environment",
+    "url_or_citation": "FAO, 2017; Poeplau & Don, 2015",
+    "topic_tags": ["soil", "carbon", "cover_crops", "nitrogen", "microbial_diversity"],
+    "linked_metrics": ["soil_organic_carbon", "microbial_diversity", "nitrogen_fixation"]
+  },
+  {
+    "id": "doc_002_chunk_1",
+    "text": "Agroforestry systems — the deliberate integration of trees and shrubs into crop and animal farming systems — can sequester 2–9 tonnes of carbon per hectare per year in above- and below-ground biomass, depending on species composition, climate, and management intensity. In semi-arid regions, the additional canopy layer reduces soil surface temperatures by 2–5°C, decreases wind erosion by up to 50%, and reduces evapotranspiration losses, improving effective water-use efficiency. These microclimate modifications create habitat niches absent in open monocultures, supporting 30–50% higher arthropod diversity.",
+    "source": "IPCC AR6 WG2 (2022), Chapter 5: Food, Fibre and Other Ecosystem Products; Nair et al. (2009), Agroforestry as a strategy for carbon sequestration, Journal of Plant Nutrition and Soil Science",
+    "url_or_citation": "IPCC AR6 WG2, 2022; Nair et al., 2009",
+    "topic_tags": ["agroforestry", "carbon", "habitat_diversity", "semi_arid", "water_retention"],
+    "linked_metrics": ["soil_organic_carbon", "habitat_diversity", "species_richness", "water_retention", "carbon_sequestration"]
+  },
+  {
+    "id": "doc_002_chunk_2",
+    "text": "Silvopastoral systems, a form of agroforestry combining trees with livestock grazing, have been shown to increase bird species richness by 50–80% compared to open pastures in tropical and subtropical regions. The tree component provides nesting sites, perching habitat, and a food source (fruit, insects associated with bark), while managed grazing maintains the understory grassland layer critical for ground-nesting species. In Colombia's Quindío region, silvopastoral conversion of degraded pastures increased butterfly species from 45 to over 120 within five years.",
+    "source": "IPBES (2019), Global Assessment Report on Biodiversity and Ecosystem Services, Chapter 4; Murgueitio et al. (2011), Native trees and shrubs for the productive rehabilitation of tropical cattle ranching lands, Forest Ecology and Management",
+    "url_or_citation": "IPBES, 2019; Murgueitio et al., 2011",
+    "topic_tags": ["agroforestry", "biodiversity", "species_richness", "livestock"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "pollinator_support"]
+  },
+  {
+    "id": "doc_003_chunk_1",
+    "text": "Riparian buffer strips — vegetated areas of trees, shrubs, and grasses maintained along waterways — are among the most effective landscape interventions for simultaneously improving water quality and supporting biodiversity. A meta-analysis of 73 studies found that riparian buffers of 10–30 metres width remove 85–95% of sediment, 50–85% of nitrogen, and 40–90% of phosphorus from agricultural runoff before it enters waterways. These buffers also serve as critical ecological corridors, connecting fragmented habitats and enabling species movement across agricultural landscapes.",
+    "source": "Mayer et al. (2007), Meta-analysis of nitrogen removal in riparian buffers, Journal of Environmental Quality; IPBES (2019), Global Assessment Report, Chapter 4",
+    "url_or_citation": "Mayer et al., 2007; IPBES, 2019",
+    "topic_tags": ["riparian_buffers", "water_quality", "biodiversity", "habitat_connectivity"],
+    "linked_metrics": ["water_quality", "species_richness", "habitat_connectivity", "nitrogen_removal"]
+  },
+  {
+    "id": "doc_003_chunk_2",
+    "text": "Riparian zones support disproportionately high biodiversity relative to their area. In temperate agricultural landscapes, riparian corridors harbour 2–3 times more plant species per unit area than adjacent farmland, and serve as critical breeding habitat for 60–70% of amphibian species. The moist microclimate, structural complexity (root systems, fallen wood, layered canopy), and reliable water access create conditions for invertebrate communities that in turn support higher trophic levels including bats, birds, and small mammals.",
+    "source": "Naiman et al. (2005), Riparia: Ecology, Conservation, and Management of Streamside Communities, Academic Press; Gregory et al. (1991), An ecosystem perspective of riparian zones, BioScience",
+    "url_or_citation": "Naiman et al., 2005; Gregory et al., 1991",
+    "topic_tags": ["riparian_buffers", "biodiversity", "habitat_diversity", "amphibians"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "water_quality"]
+  },
+  {
+    "id": "doc_004_chunk_1",
+    "text": "Hedgerows and field margins serve as essential refugia for farmland biodiversity, particularly for pollinating insects. A UK-wide study found that farms with well-maintained hedgerow networks had 25–50% higher pollinator abundance and 30% greater pollinator species richness compared to farms with minimal field boundaries. The floral resources provided by hedgerow species (hawthorn, blackthorn, elder, dog rose) extend the flowering season from March through October, providing continuous nectar and pollen availability when crop flowers are absent.",
+    "source": "Hannon & Sisk (2009), Hedgerows in an agri-natural landscape, Journal of Applied Ecology; IPBES (2016), Assessment Report on Pollinators, Pollination and Food Production",
+    "url_or_citation": "Hannon & Sisk, 2009; IPBES, 2016",
+    "topic_tags": ["hedgerows", "pollinators", "biodiversity", "species_richness"],
+    "linked_metrics": ["pollinator_support", "species_richness", "habitat_connectivity"]
+  },
+  {
+    "id": "doc_004_chunk_2",
+    "text": "Field margin restoration with native wildflower mixes has been demonstrated to increase natural pest control services by 40–60% in adjacent crops within 2–3 years. Natural enemy populations (hoverflies, parasitoid wasps, ground beetles, spiders) build up in the structurally diverse margin habitat and spill over into crop fields, reducing aphid populations by 30–50% compared to fields without margins. This biological control service has an estimated economic value of $3–8 per hectare per year in reduced pesticide costs in European cereal systems.",
+    "source": "Holland et al. (2016), Semi-natural habitats and biological control, Agriculture Ecosystems & Environment; Tschumi et al. (2016), Perennial wildflower strips enhance pest control, Proceedings of the Royal Society B",
+    "url_or_citation": "Holland et al., 2016; Tschumi et al., 2016",
+    "topic_tags": ["hedgerows", "pest_control", "biodiversity", "pollinators"],
+    "linked_metrics": ["pollinator_support", "pest_control", "species_richness"]
+  },
+  {
+    "id": "doc_005_chunk_1",
+    "text": "Rotational grazing — systematically moving livestock through a series of paddocks to allow vegetation recovery — has been shown to increase pasture plant species richness by 20–40% compared to continuous grazing, and to increase soil organic carbon by 0.5–1.0 tonnes per hectare per year in the top 30 cm. The periodic rest intervals allow grasses to regrow deep root systems, which deposit carbon at depth and improve soil structure. In degraded semi-arid rangelands, holistic planned grazing has restored vegetation cover from <30% to >70% within 3–5 years.",
+    "source": "Teague et al. (2011), Multi-paddock grazing on rangelands, Journal of Soil and Water Conservation; IPCC AR6 WG2 (2022), Chapter 5",
+    "url_or_citation": "Teague et al., 2011; IPCC AR6 WG2, 2022",
+    "topic_tags": ["grazing", "soil", "carbon", "biodiversity", "semi_arid"],
+    "linked_metrics": ["soil_organic_carbon", "species_richness", "vegetation_cover"]
+  },
+  {
+    "id": "doc_006_chunk_1",
+    "text": "Wetland ecosystems provide critical ecosystem services including water purification, flood attenuation, carbon sequestration, and biodiversity support. Despite covering only 5–8% of Earth's land surface, wetlands store approximately 20–30% of terrestrial soil carbon. Peatlands alone hold roughly 600 gigatonnes of carbon. Drainage and conversion of wetlands for agriculture releases this stored carbon and eliminates habitat for wetland-dependent species — an estimated 35% of the world's wetlands were lost between 1970 and 2015. Restoration of drained agricultural wetlands can re-establish carbon accumulation rates of 0.5–2.0 tonnes C per hectare per year and restore breeding habitat for waterfowl, amphibians, and invertebrates within 5–10 years.",
+    "source": "Ramsar Convention on Wetlands (2018), Global Wetland Outlook; IPCC AR6 WG2 (2022), Chapter 2: Terrestrial and Freshwater Ecosystems",
+    "url_or_citation": "Ramsar Convention, 2018; IPCC AR6 WG2, 2022",
+    "topic_tags": ["wetlands", "carbon", "biodiversity", "water_quality", "restoration"],
+    "linked_metrics": ["carbon_sequestration", "water_quality", "species_richness", "habitat_diversity"]
+  },
+  {
+    "id": "doc_007_chunk_1",
+    "text": "Conservation tillage practices — including no-till and reduced tillage — decrease soil disturbance, preserving soil aggregate structure and the fungal hyphal networks (particularly arbuscular mycorrhizal fungi) that are critical for plant nutrient uptake and soil carbon stabilisation. A meta-analysis of 62 long-term experiments found that no-till systems increased soil organic carbon in the 0–10 cm layer by 10–20% compared to conventional ploughing over 5–10 years. However, the effect decreases with depth, and in some clay-heavy soils the benefit is concentrated in the surface layer. Reduced tillage also decreases soil erosion by 50–90% and increases water infiltration rates by 20–50%.",
+    "source": "Powlson et al. (2014), Limited potential of no-till agriculture for climate change mitigation, Nature Climate Change; Luo et al. (2010), Soil carbon change and its responses to agricultural practices, Global Change Biology",
+    "url_or_citation": "Powlson et al., 2014; Luo et al., 2010",
+    "topic_tags": ["tillage", "soil", "carbon", "erosion", "water_retention"],
+    "linked_metrics": ["soil_organic_carbon", "microbial_diversity", "water_retention", "soil_erosion"]
+  },
+  {
+    "id": "doc_007_chunk_2",
+    "text": "Soil microbial communities under no-till management show distinct shifts towards fungal-dominated food webs compared to the bacteria-dominated webs in conventionally tilled soils. Fungal-dominated systems are associated with greater nutrient retention, slower but more stable nutrient cycling, and higher carbon-use efficiency. Arbuscular mycorrhizal fungal (AMF) colonisation rates in no-till plots are typically 30–60% higher than in ploughed plots, enhancing phosphorus uptake by crops and reducing the need for synthetic phosphorus fertiliser by 10–30%.",
+    "source": "Six et al. (2006), Bacterial and fungal contributions to carbon sequestration in agroecosystems, Soil Science Society of America Journal; Helgason et al. (2010), No-till management effects on microbial communities, Applied Soil Ecology",
+    "url_or_citation": "Six et al., 2006; Helgason et al., 2010",
+    "topic_tags": ["tillage", "soil", "microbial_diversity", "fungi"],
+    "linked_metrics": ["microbial_diversity", "soil_organic_carbon", "nutrient_cycling"]
+  },
+  {
+    "id": "doc_008_chunk_1",
+    "text": "Dedicated pollinator strips — narrow bands (3–6 metres wide) of sown wildflower mixtures within or adjacent to crop fields — significantly increase crop pollination services. In oilseed rape, sunflower, and fruit orchards, proximity to pollinator strips increased yield by 5–20% due to improved pollination quality and quantity. A Swiss study found that pollinator strips within 50 m of apple orchards increased fruit set by 12% and reduced the proportion of misshapen fruit by 25%. The strips are most effective when they include a mix of species flowering at different times to provide continuous resources from spring through autumn.",
+    "source": "IPBES (2016), Assessment Report on Pollinators, Pollination and Food Production; Tschumi et al. (2016), Perennial wildflower strips for pest control, Proceedings of the Royal Society B; Albrecht et al. (2020), Flower strips boost crop yield, Ecology Letters",
+    "url_or_citation": "IPBES, 2016; Tschumi et al., 2016; Albrecht et al., 2020",
+    "topic_tags": ["pollinators", "biodiversity", "crop_yield", "wildflower_strips"],
+    "linked_metrics": ["pollinator_support", "crop_yield", "species_richness"]
+  },
+  {
+    "id": "doc_009_chunk_1",
+    "text": "Integrated Pest Management (IPM) combines biological control, habitat management, resistant crop varieties, and targeted, minimal chemical intervention as a last resort. The FAO estimates that IPM can reduce pesticide use by 50–70% while maintaining or increasing crop yields. Reduced pesticide application has direct benefits for non-target organisms: a European meta-analysis found that fields under IPM regimes had 30% higher invertebrate species richness and 40% greater bird abundance compared to conventionally managed fields, primarily due to the recovery of insect food sources in the food chain.",
+    "source": "FAO (2020), Integrated Pest Management; Pretty & Bharucha (2015), Integrated Pest Management for sustainable intensification, Sustainability; Geiger et al. (2010), Persistent negative effects of pesticides on biodiversity, PLoS ONE",
+    "url_or_citation": "FAO, 2020; Pretty & Bharucha, 2015; Geiger et al., 2010",
+    "topic_tags": ["pest_control", "biodiversity", "pollinators", "species_richness"],
+    "linked_metrics": ["species_richness", "pollinator_support", "pest_control", "soil_health"]
+  },
+  {
+    "id": "doc_010_chunk_1",
+    "text": "Mixed native-species reforestation — planting a diverse assemblage of locally-adapted tree species rather than monoculture plantations — delivers substantially greater biodiversity and ecosystem service outcomes. A pantropical meta-analysis found that native mixed-species plantations supported 50–80% of old-growth forest bird and mammal species richness within 15–25 years, compared to only 20–30% in monoculture plantations. The structural complexity (canopy layers, understorey diversity, deadwood accumulation) of mixed plantations creates microhabitat niches unavailable in single-species stands. Carbon sequestration rates in mixed-species plantations are also 10–30% higher due to complementary resource use among species.",
+    "source": "Bremer & Farley (2010), Does plantation forestry restore biodiversity?, Biodiversity and Conservation; IPCC AR6 WG2 (2022), Chapter 5; Hulvey et al. (2013), Benefits of tree species diversity to sustainability, Journal of Applied Ecology",
+    "url_or_citation": "Bremer & Farley, 2010; IPCC AR6 WG2, 2022; Hulvey et al., 2013",
+    "topic_tags": ["reforestation", "biodiversity", "carbon", "habitat_diversity"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "carbon_sequestration", "soil_organic_carbon"]
+  },
+  {
+    "id": "doc_010_chunk_2",
+    "text": "In degraded tropical landscapes, mixed-species reforestation with a minimum of 20–30 native species has been shown to accelerate natural forest regeneration by attracting seed-dispersing birds and bats within 3–5 years, creating a positive feedback loop that increases plant species richness beyond what was planted. The 'framework species method' — planting 20–30 fast-growing, fruiting native species to catalyse natural successional processes — has been successfully applied in Thailand, Australia, and Brazil, achieving 80–100% canopy closure within 3 years and recruiting 60–100 additional plant species via natural dispersal within a decade.",
+    "source": "Elliott et al. (2013), Accelerating forest restoration using the framework species method, Forests; Lamb et al. (2005), Restoration of degraded tropical forest landscapes, Science",
+    "url_or_citation": "Elliott et al., 2013; Lamb et al., 2005",
+    "topic_tags": ["reforestation", "biodiversity", "restoration", "tropical"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "vegetation_cover"]
+  },
+  {
+    "id": "doc_011_chunk_1",
+    "text": "Water harvesting structures — including contour bunds, half-moon micro-catchments, stone check dams, and zai pits — capture and concentrate scarce rainfall in semi-arid and arid environments. In the Sahel region of Africa, zai pits (shallow planting pits filled with compost) increased sorghum and millet yields by 300–500% on degraded, crusted soils by concentrating water and nutrients at the root zone. Contour stone bunds in Burkina Faso rehabilitated 200,000–300,000 hectares of degraded land over 30 years, increasing both crop production and natural vegetation regeneration. These structures also reduce surface runoff by 40–60%, decreasing downstream flooding and soil loss.",
+    "source": "Reij et al. (2009), Agroenvironmental transformation in the Sahel, IFPRI; IPCC AR6 WG2 (2022), Chapter 4: Water; Critchley & Siegert (1991), Water Harvesting, FAO",
+    "url_or_citation": "Reij et al., 2009; IPCC AR6 WG2, 2022; Critchley & Siegert, 1991",
+    "topic_tags": ["water_harvesting", "semi_arid", "soil", "restoration"],
+    "linked_metrics": ["water_retention", "soil_organic_carbon", "vegetation_cover", "crop_yield"]
+  },
+  {
+    "id": "doc_012_chunk_1",
+    "text": "Biochar — a carbon-rich material produced by pyrolysis of organic biomass at 300–700°C in low-oxygen conditions — can improve soil fertility, increase water-holding capacity, and sequester carbon for centuries to millennia due to its recalcitrant aromatic structure. A meta-analysis of 114 studies found that biochar application to agricultural soils increased crop yields by an average of 10–25% (with the greatest effects in acidic, sandy, and nutrient-poor tropical soils), increased soil water-holding capacity by 15–20%, and raised soil pH by 0.2–1.0 units. The stability of biochar carbon means that 70–80% of the applied carbon remains in soil after 100 years, making it one of the most durable forms of soil carbon sequestration.",
+    "source": "Jeffery et al. (2017), Biochar effects on crop yield: a global meta-analysis, GCB Bioenergy; Lehmann et al. (2006), Bio-char sequestration in terrestrial ecosystems, Mitigation and Adaptation Strategies for Global Change; IPCC (2019), Special Report on Climate Change and Land",
+    "url_or_citation": "Jeffery et al., 2017; Lehmann et al., 2006; IPCC SRCCL, 2019",
+    "topic_tags": ["biochar", "soil", "carbon", "water_retention"],
+    "linked_metrics": ["soil_organic_carbon", "water_retention", "carbon_sequestration", "soil_ph"]
+  },
+  {
+    "id": "doc_013_chunk_1",
+    "text": "The IPBES Global Assessment (2019) identified five direct drivers of biodiversity loss, ranked by impact: (1) land-use change (habitat conversion and fragmentation), (2) direct exploitation of organisms (overexploitation), (3) climate change, (4) pollution (including agricultural chemical runoff), and (5) invasive alien species. Agricultural expansion and intensification account for over 70% of tropical deforestation and are the leading cause of terrestrial biodiversity loss globally. Approximately 1 million species are estimated to be threatened with extinction, many within decades, driven primarily by habitat loss and degradation.",
+    "source": "IPBES (2019), Global Assessment Report on Biodiversity and Ecosystem Services, Summary for Policymakers",
+    "url_or_citation": "IPBES, 2019",
+    "topic_tags": ["biodiversity", "land_use", "deforestation", "pollution", "climate_change"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "habitat_connectivity"]
+  },
+  {
+    "id": "doc_014_chunk_1",
+    "text": "Monoculture cropping systems — the cultivation of a single crop species over large contiguous areas — are associated with significant biodiversity loss at multiple trophic levels. Fields under monoculture support 40–60% fewer insect species and 50–70% fewer bird species compared to diverse crop rotations or polyculture systems. The homogeneous habitat structure of monocultures eliminates nesting sites, reduces food diversity (fewer weed seeds and invertebrate prey types), and creates large distances between resource patches that many species cannot traverse. The resulting simplified food webs are more vulnerable to pest outbreaks and less resilient to environmental perturbation.",
+    "source": "FAO (2019), The State of the World's Biodiversity for Food and Agriculture; Tscharntke et al. (2005), Landscape perspectives on agricultural intensification and biodiversity, Ecology Letters",
+    "url_or_citation": "FAO, 2019; Tscharntke et al., 2005",
+    "topic_tags": ["monoculture", "biodiversity", "species_richness", "pest_control", "land_use"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "pest_control"]
+  },
+  {
+    "id": "doc_015_chunk_1",
+    "text": "Intercropping — the simultaneous cultivation of two or more crop species in the same field — increases above-ground biodiversity and resource-use efficiency compared to sole cropping. Cereal-legume intercropping (e.g., maize-bean, wheat-chickpea) is particularly effective, combining the nitrogen-fixing capacity of legumes with the carbon-assimilating efficiency of cereals. A meta-analysis of 69 intercropping experiments found average yield advantages of 16–29% (measured as Land Equivalent Ratio > 1.0), alongside 20–30% higher arthropod diversity and 40–55% reduction in specialist crop pest damage due to the disruption of host-finding cues in mixed canopies.",
+    "source": "Li et al. (2020), Intercropping enhances biodiversity and ecosystem services, Nature Plants; Brooker et al. (2015), Improving intercropping, Journal of Applied Ecology; Martin-Guay et al. (2018), Intercropping meta-analysis, Agriculture Ecosystems & Environment",
+    "url_or_citation": "Li et al., 2020; Brooker et al., 2015; Martin-Guay et al., 2018",
+    "topic_tags": ["intercropping", "biodiversity", "soil", "nitrogen", "pest_control"],
+    "linked_metrics": ["species_richness", "pest_control", "soil_organic_carbon", "nitrogen_fixation"]
+  },
+  {
+    "id": "doc_016_chunk_1",
+    "text": "Climate change is projected to shift species distributions, alter phenology (timing of biological events), and increase the frequency of extreme weather events, all of which interact with land-use pressures to accelerate biodiversity loss. The IPCC AR6 WG2 found that approximately 3–14% of assessed species will likely face very high risk of extinction at 1.5°C of global warming, rising to 3–18% at 2°C and 3–29% at 3°C. In agricultural systems, climate change is expected to shift optimal growing zones for major crops by 100–300 km per decade, potentially stranding existing investments in perennial cropping systems and agroforestry unless assisted migration and climate-adapted cultivars are incorporated into management plans.",
+    "source": "IPCC AR6 WG2 (2022), Chapter 2: Terrestrial and Freshwater Ecosystems; Chapter 5: Food, Fibre and Other Ecosystem Products",
+    "url_or_citation": "IPCC AR6 WG2, 2022",
+    "topic_tags": ["climate_change", "biodiversity", "species_richness", "adaptation"],
+    "linked_metrics": ["species_richness", "habitat_diversity", "crop_yield"]
+  },
+  {
+    "id": "doc_017_chunk_1",
+    "text": "Soil microbial diversity is a fundamental indicator of soil health and ecosystem function. A single gram of healthy soil can contain up to 10 billion bacterial cells representing thousands of species, along with extensive fungal hyphal networks, protozoa, and nematodes. This belowground biodiversity drives decomposition, nutrient cycling, disease suppression, and soil structure formation. Agricultural intensification — particularly heavy tillage, monoculture cropping, and excessive agrochemical use — can reduce soil microbial diversity by 30–50% and shift community composition towards fast-cycling, disturbance-tolerant species at the expense of slow-cycling, carbon-stabilising taxa.",
+    "source": "FAO (2020), State of Knowledge of Soil Biodiversity; Fierer (2017), Embracing the unknown: disentangling the complexities of the soil microbiome, Nature Reviews Microbiology",
+    "url_or_citation": "FAO, 2020; Fierer, 2017",
+    "topic_tags": ["soil", "microbial_diversity", "biodiversity", "tillage"],
+    "linked_metrics": ["microbial_diversity", "soil_organic_carbon", "nutrient_cycling"]
+  }
+]

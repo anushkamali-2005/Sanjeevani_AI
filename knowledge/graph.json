@@ -1,0 +1,220 @@
+{
+  "interventions": [
+    {
+      "name": "Legume-based cover cropping",
+      "affects_metrics": ["soil_organic_carbon", "microbial_diversity", "pollinator_support", "nitrogen_fixation"],
+      "mechanism": "Legumes fix atmospheric nitrogen through symbiotic rhizobia bacteria, contributing 50–200 kg N/ha/year. Continuous root biomass from cover crops feeds soil microbial communities, increasing microbial biomass carbon by 15–25% within 2–3 cropping cycles. Flowering legumes also provide nectar and pollen resources for pollinating insects during periods when cash crops are not in bloom.",
+      "effect_size": "+15–25% soil organic carbon over 2–3 years; 50–200 kg N/ha/year biological nitrogen fixation",
+      "preconditions": ["low_soil_organic_carbon", "moderate_soil_organic_carbon", "any_rainfall", "monoculture", "low_rainfall", "moderate_rainfall"],
+      "time_horizon": "medium_term",
+      "source": "IPCC AR6 WGII Technical Summary (2022) & FAO Soil Organic Carbon (Poeplau & Don, 2015)",
+      "co_benefits": [
+        "Reduced synthetic nitrogen fertilizer costs",
+        "Suppression of weed emergence during fallow periods",
+        "Enhanced wild pollinator foraging habitat"
+      ],
+      "trade_offs": [
+        "Initial seed and establishment expenditure",
+        "Soil moisture consumption in moisture-critical planting windows"
+      ]
+    },
+    {
+      "name": "Agroforestry and intercropping in semi-arid monoculture systems",
+      "affects_metrics": ["soil_organic_carbon", "habitat_diversity", "species_richness", "water_retention", "carbon_sequestration"],
+      "mechanism": "Tree and shrub layers reduce wind erosion by up to 50% and lower soil surface temperatures by 2–5°C, decreasing evapotranspiration and improving effective water-use efficiency. Leaf litter inputs add carbon to soil, while vertical habitat structure (canopy, understorey, ground layer) creates microhabitat niches absent in open monocultures, supporting 30–50% higher arthropod diversity.",
+      "effect_size": "2–9 tonnes C/ha/year sequestration; 30–50% higher arthropod diversity; measurable increases in canopy-dependent species richness within 3–5 years",
+      "preconditions": ["monoculture", "semi_arid", "low_rainfall", "low_soil_organic_carbon"],
+      "time_horizon": "medium_to_long_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia (Section 10.4) & Nair et al. (2009)",
+      "co_benefits": [
+        "Diversified revenue streams from timber, fruit, and fodder",
+        "Microclimate buffering against extreme heat waves",
+        "Groundwater recharge enhancement"
+      ],
+      "trade_offs": [
+        "Competition for sunlight and moisture with cash crops if canopy unmanaged",
+        "Increased labor requirements for pruning and harvesting"
+      ]
+    },
+    {
+      "name": "Riparian buffer strip establishment",
+      "affects_metrics": ["water_quality", "species_richness", "habitat_connectivity", "nitrogen_removal"],
+      "mechanism": "Vegetated strips of 10–30 m width along waterways filter agricultural runoff through physical trapping, root uptake, and microbial denitrification, removing 85–95% of sediment and 50–85% of nitrogen. The strips function as ecological corridors connecting fragmented habitat patches, enabling species dispersal across agricultural landscapes and supporting 2–3× higher plant species density than adjacent farmland.",
+      "effect_size": "85–95% sediment removal; 50–85% nitrogen removal; 2–3× plant species richness per unit area",
+      "preconditions": ["high_pollution", "degraded_water_quality", "fragmented_habitat", "moderate_rainfall", "high_rainfall"],
+      "time_horizon": "medium_term",
+      "source": "IPCC AR6 WGII Cross-Chapter Paper 1 (CCP1: Biodiversity Hotspots) & Mayer et al. (2007)",
+      "co_benefits": [
+        "Protection against bank erosion and flood damage",
+        "Thermal buffering of aquatic habitats",
+        "Recreational and aesthetic landscape value"
+      ],
+      "trade_offs": [
+        "Loss of productive cropland area along waterways",
+        "Potential habitat for localized wildlife grazing"
+      ]
+    },
+    {
+      "name": "Hedgerow and field margin floral restoration",
+      "affects_metrics": ["pollinator_support", "species_richness", "habitat_connectivity", "pest_control"],
+      "mechanism": "Native hedgerow species (hawthorn, blackthorn, elder, dog rose) extend the flowering season from March through October, providing continuous nectar and pollen when crop flowers are absent. Structurally diverse margins harbour populations of natural pest enemies (hoverflies, parasitoid wasps, ground beetles) that spill over into adjacent crops, reducing aphid populations by 30–50%.",
+      "effect_size": "25–50% higher pollinator abundance; 30% greater pollinator species richness; 40–60% increase in natural pest control services within 2–3 years",
+      "preconditions": ["monoculture", "low_species_richness", "fragmented_habitat", "any_rainfall"],
+      "time_horizon": "short_to_medium_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & IPBES Pollinators Assessment (Holland et al., 2016)",
+      "co_benefits": [
+        "Biological pest regulation saving chemical spray costs",
+        "Windbreak protection reducing crop lodging",
+        "Connectivity for small mammals and songbirds"
+      ],
+      "trade_offs": [
+        "Requires periodic mechanical trimming and maintenance",
+        "Minor field area taken out of primary crop production"
+      ]
+    },
+    {
+      "name": "Holistic planned rotational grazing",
+      "affects_metrics": ["soil_organic_carbon", "species_richness", "vegetation_cover"],
+      "mechanism": "Systematic paddock rotation with periodic rest intervals allows grasses to regrow deep root systems that deposit carbon at depth, improving soil structure and increasing SOC. Grazing pressure management maintains plant species diversity by preventing competitive exclusion, while hoof action breaks soil crusts in semi-arid systems, improving water infiltration and seed-soil contact.",
+      "effect_size": "+0.5–1.0 tonnes C/ha/year in top 30 cm; 20–40% increase in pasture plant species richness; vegetation cover recovery from <30% to >70% within 3–5 years in degraded rangelands",
+      "preconditions": ["pastoral", "degraded_rangeland", "semi_arid", "low_soil_organic_carbon", "low_rainfall"],
+      "time_horizon": "medium_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & Teague et al. (2011)",
+      "co_benefits": [
+        "Higher livestock carrying capacity over time",
+        "Increased drought resilience of pastures",
+        "Even distribution of organic manure"
+      ],
+      "trade_offs": [
+        "Higher infrastructure capital for portable fencing and watering points",
+        "Requires intensive monitoring and dynamic paddock planning"
+      ]
+    },
+    {
+      "name": "Agricultural wetland and peatland re-wetting",
+      "affects_metrics": ["carbon_sequestration", "water_quality", "species_richness", "habitat_diversity"],
+      "mechanism": "Restoring the water table in drained wetlands halts aerobic peat decomposition and associated carbon emissions, re-establishes anaerobic carbon accumulation, and restores hydrophytic vegetation communities. Rewetted areas rapidly recover aquatic invertebrate diversity, provide breeding habitat for waterfowl and amphibians, and function as natural water purification systems filtering agricultural nutrients.",
+      "effect_size": "0.5–2.0 tonnes C/ha/year re-accumulation; restoration of breeding habitat for waterfowl and amphibians within 5–10 years",
+      "preconditions": ["wetland_adjacent", "drained_wetland", "high_pollution", "moderate_rainfall", "high_rainfall"],
+      "time_horizon": "long_term",
+      "source": "IPCC AR6 WGII Cross-Chapter Paper 1 (CCP1: Biodiversity Hotspots) & Ramsar Convention (2018)",
+      "co_benefits": [
+        "Regional flood risk mitigation and groundwater replenishment",
+        "Ecotourism and wildfowl habitat recovery",
+        "Major permanent carbon emission reduction"
+      ],
+      "trade_offs": [
+        "Permanent reduction of conventional agricultural output on rewetted land",
+        "Potential localized increase in initial methane emissions during stabilization"
+      ]
+    },
+    {
+      "name": "Conservation agriculture and reduced or no-tillage",
+      "affects_metrics": ["soil_organic_carbon", "microbial_diversity", "water_retention", "soil_erosion"],
+      "mechanism": "Eliminating or reducing tillage preserves soil aggregate structure and fungal hyphal networks (particularly arbuscular mycorrhizal fungi) critical for plant nutrient uptake and carbon stabilisation. Undisturbed soil surfaces maintain higher infiltration rates and develop a protective residue layer that reduces erosion. The shift to fungal-dominated microbial communities increases carbon-use efficiency and nutrient retention.",
+      "effect_size": "+10–20% SOC in 0–10 cm layer over 5–10 years; 50–90% reduction in soil erosion; 20–50% increase in water infiltration; 30–60% higher AMF colonisation rates",
+      "preconditions": ["conventional_tillage", "low_soil_organic_carbon", "moderate_soil_organic_carbon", "any_rainfall"],
+      "time_horizon": "medium_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & Powlson et al. (2014)",
+      "co_benefits": [
+        "Significant reduction in tractor fuel and labor expenses",
+        "Improved soil water infiltration during heavy downpours",
+        "Reduced particulate air pollution from field dust"
+      ],
+      "trade_offs": [
+        "Initial transition yield dip (1–3 years) during soil biology restructuring",
+        "Potential initial reliance on targeted herbicides for weed management"
+      ]
+    },
+    {
+      "name": "Permanent pollinator wildflower strips",
+      "affects_metrics": ["pollinator_support", "crop_yield", "species_richness", "pest_control"],
+      "mechanism": "Narrow bands (3–6 m) of sown wildflower mixes within or adjacent to crop fields provide continuous floral resources across the growing season. Diverse pollinator communities (wild bees, hoverflies, butterflies) build up in these strips and service adjacent crops, increasing pollination quality and quantity. The structural diversity also supports natural enemy populations that reduce pest pressure.",
+      "effect_size": "+5–20% crop yield from improved pollination; 12% increase in fruit set in orchards within 50 m; 25% reduction in misshapen fruit",
+      "preconditions": ["monoculture", "low_species_richness", "pollinator_decline", "any_rainfall"],
+      "time_horizon": "short_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & Albrecht et al. (2020)",
+      "co_benefits": [
+        "Yield and quality boost for insect-pollinated commercial crops",
+        "Landscape aesthetic enhancement",
+        "Spillover of predatory insects controlling aphids"
+      ],
+      "trade_offs": [
+        "Dedicated land allocation removed from direct crop harvest",
+        "Requires weed management during establishment year"
+      ]
+    },
+    {
+      "name": "Integrated Pest Management with biological controls",
+      "affects_metrics": ["species_richness", "pollinator_support", "pest_control", "soil_health"],
+      "mechanism": "IPM replaces broad-spectrum chemical pesticides with biological control agents (predatory insects, parasitoid wasps, microbial biopesticides), habitat management to support natural enemies, and targeted minimal chemical intervention as a last resort. Reduced pesticide load allows recovery of non-target invertebrate communities, rebuilding the food web base that supports higher trophic levels including insectivorous birds and bats.",
+      "effect_size": "50–70% reduction in pesticide use; 30% higher invertebrate species richness; 40% greater bird abundance compared to conventional management",
+      "preconditions": ["high_pesticide_use", "monoculture", "low_species_richness", "any_rainfall"],
+      "time_horizon": "short_to_medium_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & Pretty & Bharucha (2015)",
+      "co_benefits": [
+        "Elimination of chemical pesticide residue on harvested produce",
+        "Reduced health hazards for farm workers",
+        "Conservation of beneficial non-target organisms"
+      ],
+      "trade_offs": [
+        "Requires higher biological literacy and scouting discipline",
+        "Biological control agents may act slower than knockdown chemical sprays"
+      ]
+    },
+    {
+      "name": "Mixed native-species reforestation (framework species method)",
+      "affects_metrics": ["species_richness", "habitat_diversity", "carbon_sequestration", "soil_organic_carbon"],
+      "mechanism": "Planting 20–30 fast-growing, fruiting native tree species catalyses natural forest succession by attracting seed-dispersing birds and bats. The resulting multi-layered canopy structure creates diverse microhabitat niches (light gaps, deadwood, understorey) that support a far wider range of species than monoculture plantations. Carbon sequestration benefits from complementary resource use (light, water, nutrients) among diverse species.",
+      "effect_size": "50–80% of old-growth species richness recovered within 15–25 years; 10–30% higher carbon sequestration than monoculture plantations; 60–100 additional plant species recruited via natural dispersal within a decade",
+      "preconditions": ["deforested", "degraded_land", "fragmented_habitat", "moderate_rainfall", "high_rainfall", "tropical", "subtropical"],
+      "time_horizon": "long_term",
+      "source": "IPCC AR6 WGII Cross-Chapter Paper 1 (CCP1) & Chapter 18: Climate Resilient Development",
+      "co_benefits": [
+        "Long-term timber and non-timber forest product harvesting potential",
+        "Watershed protection and regional rainfall stabilization",
+        "Restoration of indigenous biodiversity complexes"
+      ],
+      "trade_offs": [
+        "High initial sapling planting and sapling protection costs",
+        "Decadal return horizon before full ecosystem maturity"
+      ]
+    },
+    {
+      "name": "Contour bunding and rainwater harvesting micro-catchments",
+      "affects_metrics": ["water_retention", "soil_organic_carbon", "vegetation_cover", "crop_yield"],
+      "mechanism": "Physical structures (contour stone bunds, zai pits, half-moon micro-catchments) capture and concentrate scarce rainfall at the root zone in semi-arid environments. By reducing surface runoff by 40–60%, they decrease downstream soil loss, increase soil moisture availability, and enable vegetation establishment on previously degraded, crusted soils. The concentrated water and nutrient inputs create productive microsites that gradually expand as vegetation recovers.",
+      "effect_size": "300–500% yield increase on degraded soils (zai pits); 40–60% runoff reduction; rehabilitation of 200,000–300,000 ha demonstrated in semi-arid zones",
+      "preconditions": ["semi_arid", "arid", "low_rainfall", "degraded_land", "low_soil_organic_carbon"],
+      "time_horizon": "short_to_medium_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia (Section 10.4.3) & Reij et al. (2009)",
+      "co_benefits": [
+        "Restoration of barren agricultural lands to productive cultivation",
+        "Local shallow aquifer recharge",
+        "Substantial erosion prevention during flash rainstorms"
+      ],
+      "trade_offs": [
+        "Significant initial manual labor or earthmoving machinery required",
+        "Structures require seasonal repair following extreme storm runoff"
+      ]
+    },
+    {
+      "name": "Biochar soil amendment",
+      "affects_metrics": ["soil_organic_carbon", "water_retention", "carbon_sequestration", "soil_ph"],
+      "mechanism": "Pyrolysis of organic biomass at 300–700°C produces a highly stable, porous carbon structure that resists microbial decomposition for centuries. When incorporated into soil, biochar's high porosity increases water-holding capacity and provides habitat for beneficial microorganisms. Its alkaline nature raises soil pH in acidic soils, improving nutrient availability. The recalcitrant carbon structure means 70–80% of applied carbon remains after 100 years.",
+      "effect_size": "+10–25% crop yield (greatest in acidic, sandy tropical soils); +15–20% soil water-holding capacity; pH increase of 0.2–1.0 units; 70–80% carbon persistence after 100 years",
+      "preconditions": ["low_soil_organic_carbon", "acidic_soil", "sandy_soil", "low_rainfall", "moderate_rainfall"],
+      "time_horizon": "long_term",
+      "source": "IPCC AR6 WGII Chapter 10: Asia & IPCC Special Report on Climate Change and Land (SRCCL)",
+      "co_benefits": [
+        "Century-scale stable soil carbon sequestration",
+        "Reduced nutrient leaching and improved fertilizer use efficiency",
+        "Amelioration of acidic soils without chemical lime"
+      ],
+      "trade_offs": [
+        "High upfront cost of biochar material and transport",
+        "Dust handling hazards and application logistics"
+      ]
+    }
+  ]
+}

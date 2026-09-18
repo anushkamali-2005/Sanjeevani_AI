@@ -1,105 +1,28 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Virtual Environment
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-
-# Environment Variables
+# Environment & secrets
 .env
 .env.local
 .env.*.local
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pytest
+# Pytest & test cache
 .pytest_cache/
 .coverage
 htmlcov/
-.tox/
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Deployment & frameworks
+.vercel
+.vercelignore
 
-# Logs
-*.log
-logs/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# ChromaDB / Vector Database
-chroma_db/
-*.chroma
-
-# ML Models
-*.pkl
-*.joblib
-*.h5
-*.pt
-*.pth
-models/
-
-# Node modules (if frontend uses npm/yarn)
+# Dependencies
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Frontend build
-frontend/dist/
-frontend/build/
+# Agent IDE workspace state
+.agents/
 
-# OS
-Thumbs.db
-.DS_Store
-
-# Temporary files
-*.tmp
-*.temp
-temp/
-tmp/
-
-# Data files (uncomment if you don't want to track data)
-# data/
-# *.csv
-# *.json
-# *.parquet
+# Large raw datasets (>100MB exceeds GitHub push limits)
+data/GlobalLandTemperaturesByCity.csv
